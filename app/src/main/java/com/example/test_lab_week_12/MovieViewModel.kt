@@ -10,6 +10,8 @@ import com.example.test_lab_week_12.MovieRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
+import java.util.Calendar
+
 
 
 class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel() {
@@ -44,11 +46,17 @@ class MovieViewModel(private val movieRepository: MovieRepository) : ViewModel()
                 .catch { e ->
                     // Menangkap exception dari Flow
                     _error.value = "An exception occurred: ${e.message}"
+                }.collect { movies ->
+                    val currentYear = Calendar.getInstance().get(Calendar.YEAR).toString()
+
+                    val filtered = movies
+                        .filter { movie -> movie.releaseDate?.startsWith(currentYear) == true }
+                        .sortedByDescending { it.popularity }
+
+                    _popularMovies.value = filtered
                 }
-                .collect { movies ->
-                    // Update StateFlow
-                    _popularMovies.value = movies
-                }
+
+
+        }
         }
     }
-}

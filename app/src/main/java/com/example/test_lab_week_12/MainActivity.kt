@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.test_lab_week_12.model.Movie
 import com.google.android.material.snackbar.Snackbar
-import java.util.Calendar
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -71,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                 launch {
 // collect the error message from the StateFlow
                     movieViewModel.error.collect { error ->
-// if an error occurs, show a Snackbar   with the error message
+// if an error occurs, show a Snackbar  with the error message
 
                         if (error.isNotEmpty()) Snackbar
                             .make(

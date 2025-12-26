@@ -1,8 +1,8 @@
-package com.example.test_lab_week_12
+package com.example.lab_week_13
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.test_lab_week_12.model.Movie
+import com.example.lab_week_13.model.Movie
 
 @BindingAdapter("list")
 fun bindMovies(view: RecyclerView, movies: List<Movie>?) {

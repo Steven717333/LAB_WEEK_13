@@ -8,10 +8,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_week_13.model.Movie
-import com.example.test_lab_week_12.R
-
-//import com.example.lab_week_13.databinding.ActivityMainBinding
-import com.example.test_lab_week_12.databinding.ActivityMainBinding
+//import com.example.test_lab_week_12.R
+import  com.example.lab_week_13.R
+import com.example.lab_week_13.databinding.ActivityMainBinding
+//import com.example.test_lab_week_12.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
